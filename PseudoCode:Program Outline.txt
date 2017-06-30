@@ -1,0 +1,134 @@
+//Danny Nsouli
+//Software Project 1 Algorithms Phase 1 - contributed to by Professor Tim Wood @ GWU
+
+addNode:
+
+Explanation: 
+-allocate memory for newNode
+-fill data into newNode
+-if list is null create an empty list
+-if list's head is null then head <- newNode
+-end if current node <- list's head
+-use a while loop to go through the list to find the last node or location
+-as you go along the loop must set the current node to the next node
+-it will loop through the list until the next node after the current one is null
+-then once the last node is found, the next node must equal the new location with inputs: name, latitude, and longitude, changing it from being null originally, granting the creation of the new node to the end of the list
+-a count variable can be added into the loop in order to find the index of the node added starting from 1
+
+Code Explanation:
+allocate memory for newNode
+fill data into newNode
+if list is null create an empty list
+if list's head is null then head <- newNode
+end if current node <- list's head
+counter <- 1
+while next node is not null{
+  set current node to next node
+  counter <- counter+1
+}
+current node <- newNode
+return counter;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+addSortedNode:
+
+Explanation: 
+-allocate memory for newNode
+-fill data into newNode
+-if list is null create an empty list
+-if list's head is null then head <- newNode
+-end if current node <- list's head
+-Sort the area unless otherwise sorted
+-there would be a while loop that would go through all the nodes in the link
+-at each node it would check if the current node is bigger in longitude than the node trying to be placed (input)
+-once the current node is bigger than the input node’s longitude, the loop would stop and the input node would be placed in its index, moving the list up by 1 index
+-the method would then return the index of the bigger longitude node since the input node would be taking its place at that index, you could use a counter variable in the loop for the index
+
+
+Code Explanation:
+allocate memory for newNode
+fill data into newNode
+if list is null create an empty list
+if list's head is null then head <- newNode
+end if current node <- list's head
+counter <- 1
+if list's head has a bigger longitude than newNode then head<-newNode
+if not then
+while next node is not null{
+  if current node has longtidude >= newNode break loop
+  counter <- counter+1
+}
+current node <- newNode
+return counter;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+remNode:
+
+Explanation: 
+-Use a while loop to go through the full list
+-Get the name of each node, use a link list method in order to compare the strings of the name and the name you are trying to find
+-once the name is found remove it
+-use a counter variable in the loop to specify how far along the list you’ve gone in order to return the correct index of the element removed
+- have an if statement that would output -1 is there is an error
+
+Code Explanation:
+
+allocate memory for newNode
+fill data into newNode
+if list is null create an empty list
+if list's head is null then method is complete becaus ehtere is nothing to remove
+counter <- 1
+while next node is not null{
+  get current name
+  compare with name wanted to be found
+  if name is the same as name wanted to be found break loop
+  counter <- counter+1
+}
+current node is removed
+return counter;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+clearList:
+
+Eplanation:
+-allocate memory for newNode
+-fill data into newNode
+-if list is null create an empty list
+-if list's head is null then method is complete because the point is to clear the list
+-first there would be two temp nodes, temp1 and temp2
+-temp1 is the head
+-a while loop would loop until temp1 is null
+-in the loop temp2 would be equal to the next node to temp1
+-then temp1 would be the previous node to temp2 and would be set equal to null
+-then temp1=temp2 so that the process can continue again until temp1 is null
+-there can be a counter variable in the loop that would in the end be the number of elements in the list, which would be returned
+
+Code Explanation:
+
+allocate memory for newNode
+fill data into newNode
+if list is null create an empty list
+if list's head is null then method is complete because the point is to clear the list
+counter <- 1
+newNode temp1 <- head
+newNode temp2
+while temp1 != null {
+  temp2 = node next to temp1
+  temp1 = null/freed
+  temp1 = temp2;
+}
+current node is removed
+return counter;
+
+
+
+
+
+
+
+
+
+
